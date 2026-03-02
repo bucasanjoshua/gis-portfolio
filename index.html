@@ -51,6 +51,8 @@
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
+      will-change: transform;
+      transition: transform 0.12s linear;
     }
 
     .hero {
@@ -289,6 +291,17 @@
       padding-left: 18px;
     }
 
+
+    @media (prefers-reduced-motion: reduce) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .card {
+        transition: none;
+      }
+    }
+
     footer {
       text-align: center;
       color: var(--muted);
@@ -455,6 +468,32 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
+
+    const cards = Array.from(document.querySelectorAll('main .card'));
+    let ticking = false;
+
+    function applyParallax() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const bgOffset = scrollY * 0.12;
+      document.body.style.backgroundPosition = `center calc(50% + ${bgOffset}px), center calc(50% + ${bgOffset}px)`;
+
+      cards.forEach((card, index) => {
+        const speed = 0.012 + index * 0.003;
+        const cardOffset = scrollY * speed;
+        card.style.transform = `translate3d(0, ${cardOffset}px, 0)`;
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(applyParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    applyParallax();
   </script>
 
   <footer>© 2026 Joshua Bucasan · Background photo from Pexels (free use).</footer>
