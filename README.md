@@ -63,25 +63,6 @@ Registered Professional Forester – October 2024
 
 ---
 
-## Featured GIS Projects
-
----
-
-### 1. Terrain Analysis – Diffun, Quirino, Philippines
-
-Comprehensive terrain characterization using Digital Elevation Model (DEM) datasets to assess elevation, slope, and aspect patterns for land suitability and environmental assessment.
-
-**Key Analyses:**
-- Slope 
-- Aspect 
-- Elevation 
-- Contour
-- Hillshade
-
-**Tools Used:** QGIS, ArcGIS (Spatial Analyst), Raster Processing
-
----
-
 ### 2. NDVI Analysis – Diffun, Quirino, Philippines
 
 Vegetation health assessment using Normalized Difference Vegetation Index (NDVI) derived from satellite imagery to evaluate vegetation density and productivity.
