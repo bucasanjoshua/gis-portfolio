@@ -1,4 +1,4 @@
-### 4. Landslide Susceptibility Assessment  
+### Landslide Susceptibility Assessment  
 Upper Marikina River Basin Protected Landscape (UMRBPL), Philippines
 
 Developed a GIS-based landslide susceptibility model using multi-criteria evaluation to identify high-risk zones within the Upper Marikina River Basin Protected Landscape.
