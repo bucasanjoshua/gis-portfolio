@@ -140,6 +140,67 @@
       text-decoration: underline;
     }
 
+
+    .collapsible {
+      overflow: hidden;
+    }
+
+    .collapse-toggle {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: -4px -4px 0;
+      padding: 6px 4px;
+      user-select: none;
+    }
+
+    .collapse-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .collapse-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #d6d6d6;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .icon-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid var(--pill-border);
+      background: var(--pill-bg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .chevron {
+      font-size: 1rem;
+      color: var(--muted);
+      transition: transform 0.25s ease;
+    }
+
+    details[open] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .collapse-content {
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
     footer {
       text-align: center;
       color: var(--muted);
@@ -196,39 +257,53 @@
       </article>
     </section>
 
-    <section class="card">
-      <h2>Experience</h2>
-      <div class="entry">
-        <h3>Quirino State University — GIS and Forestry Instructor (Contract of Service)</h3>
-        <p class="meta">Quirino, Philippines · January – December 2025</p>
-        <ul>
-          <li>Instructed 50+ undergraduate students per semester in GIS fundamentals, spatial analysis, and remote sensing through 2 hours of lecture and 3 hours of laboratory work weekly.</li>
-          <li>Curated and processed shapefiles and raster datasets from open-source repositories with Python scripting and AI support for hands-on learning in spatial analysis, digitizing, and map layout design.</li>
-          <li>Designed and implemented a comprehensive lab curriculum with 12 structured exercises, 12 instructional handouts, and 3 practical exams to ensure student competency.</li>
-          <li>Developed and maintained a centralized departmental GIS database, improving instructional data access and reducing student project preparation time.</li>
-        </ul>
-      </div>
+    <section class="card collapsible">
+      <details>
+        <summary class="collapse-toggle">
+          <span class="collapse-label"><span class="icon-circle">💼</span>Experience</span>
+          <span class="chevron">⌄</span>
+        </summary>
+        <div class="collapse-content">
+          <div class="entry">
+            <h3>Quirino State University — GIS and Forestry Instructor (Contract of Service)</h3>
+            <p class="meta">Quirino, Philippines · January – December 2025</p>
+            <ul>
+              <li>Instructed 50+ undergraduate students per semester in GIS fundamentals, spatial analysis, and remote sensing through 2 hours of lecture and 3 hours of laboratory work weekly.</li>
+              <li>Curated and processed shapefiles and raster datasets from open-source repositories with Python scripting and AI support for hands-on learning in spatial analysis, digitizing, and map layout design.</li>
+              <li>Designed and implemented a comprehensive lab curriculum with 12 structured exercises, 12 instructional handouts, and 3 practical exams to ensure student competency.</li>
+              <li>Developed and maintained a centralized departmental GIS database, improving instructional data access and reducing student project preparation time.</li>
+            </ul>
+          </div>
 
-      <div class="entry">
-        <h3>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</h3>
-        <p class="meta">Baguio City, Philippines · October – December 2024</p>
-        <ul>
-          <li>Validated high-volume survey data daily against approved documents, including 30 Survey Plan Information (SPI) records, 200 lot parcels, and 300 scanned documents to maintain data accuracy.</li>
-          <li>Collaborated with geodetic engineers to identify spatial discrepancies (gaps, overlaps, projection errors) from data encoding and preserve official data integrity.</li>
-          <li>Documented and recommended corrective actions for inconsistencies, supporting quality improvement in geospatial databases.</li>
-          <li>Produced final map layouts for official reports and presentations, translating complex spatial data into clear visual outputs for stakeholders.</li>
-        </ul>
-      </div>
+          <div class="entry">
+            <h3>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</h3>
+            <p class="meta">Baguio City, Philippines · October – December 2024</p>
+            <ul>
+              <li>Validated high-volume survey data daily against approved documents, including 30 Survey Plan Information (SPI) records, 200 lot parcels, and 300 scanned documents to maintain data accuracy.</li>
+              <li>Collaborated with geodetic engineers to identify spatial discrepancies (gaps, overlaps, projection errors) from data encoding and preserve official data integrity.</li>
+              <li>Documented and recommended corrective actions for inconsistencies, supporting quality improvement in geospatial databases.</li>
+              <li>Produced final map layouts for official reports and presentations, translating complex spatial data into clear visual outputs for stakeholders.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section class="grid">
-      <article class="card">
-        <h2>Professional Training &amp; Development</h2>
-        <ul>
-          <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
-          <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
-          <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
-        </ul>
+      <article class="card collapsible">
+        <details>
+          <summary class="collapse-toggle">
+            <span class="collapse-label"><span class="icon-circle">🎓</span>Professional Training &amp; Development</span>
+            <span class="chevron">⌄</span>
+          </summary>
+          <div class="collapse-content">
+            <ul>
+              <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
+              <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
+              <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
+            </ul>
+          </div>
+        </details>
       </article>
 
       <article class="card">
