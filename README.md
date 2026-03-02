@@ -61,24 +61,6 @@ Benguet State University | 2019 – 2024
 
 Registered Professional Forester – October 2024
 
----
-
-
-
-### 3. Normalized Difference Index (NDI) – Angadanan, Isabela, Philippines
-
-Applied spectral index analysis for environmental condition assessment using satellite imagery and band mathematics.
-
-**Key Analyses:**
-- Normalized Difference Built-up Index
-- Normalized Difference Moisture Index
-- Normalized Difference Vegetation Index
-
-**Tools Used:** QGIS, ArcGIS, Raster Analysis
-
----
-
-### 4. Landslide Susceptibility Analysis – Upper Marikina River Basin Protected Landscape (UMRBPL), Philippines
 
 ### 4. Landslide Susceptibility Assessment  
 Upper Marikina River Basin Protected Landscape (UMRBPL), Philippines
