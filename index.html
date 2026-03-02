@@ -18,8 +18,7 @@
       --muted: #a9a9a9;
       --border: #2c2c2c;
       --accent: #9bc7ff;
-      --pill-bg: #1f2a38;
-      --pill-border: #2f425c;
+      --highlight: #132538;
     }
 
     * { box-sizing: border-box; }
@@ -33,7 +32,7 @@
     }
 
     .container {
-      width: min(1040px, 92vw);
+      width: min(900px, 92vw);
       margin: 42px auto;
     }
 
@@ -51,15 +50,16 @@
     }
 
     h1 {
-      margin: 0 0 10px;
+      margin: 0;
       font-size: clamp(30px, 4vw, 42px);
       line-height: 1.15;
+      letter-spacing: 0.01em;
     }
 
-    .role {
+    .license {
+      margin: 10px 0 12px;
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 12px;
     }
 
     .contact {
@@ -72,62 +72,20 @@
 
     h2 {
       margin: 0 0 14px;
-      font-size: 1.02rem;
+      font-size: 1.03rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #d6d6d6;
     }
 
-    .section-spacer {
-      margin-top: 22px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .entry { margin-bottom: 18px; }
-    .entry:last-child { margin-bottom: 0; }
-
-    .entry h3 {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .meta {
-      margin: 4px 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+    p, li { color: #dfdfdf; }
 
     ul {
       margin: 10px 0 0;
       padding-left: 18px;
     }
 
-    li {
-      margin-bottom: 8px;
-      color: #dfdfdf;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--pill-border);
-      background: var(--pill-bg);
-      color: #d2e5ff;
-      padding: 6px 12px;
-      font-size: 0.9rem;
-    }
+    li { margin-bottom: 8px; }
 
     a {
       color: var(--accent);
@@ -136,85 +94,99 @@
     }
 
     a:hover,
-    a:focus-visible {
-      text-decoration: underline;
+    a:focus-visible { text-decoration: underline; }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid #3a4a5f;
+      background: #1b2835;
+      color: #d9e9ff;
+      font-size: 0.92rem;
+      white-space: nowrap;
     }
 
 
-    .collapsible {
-      overflow: hidden;
+    .gis-projects {
+      border: 1px solid #2f4c69;
+      background: linear-gradient(170deg, #16283a, var(--panel));
     }
 
-    .collapse-toggle {
+    .gis-projects h2 {
+      color: #b9dcff;
+      font-size: 1.15rem;
+    }
+
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .project-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(185, 220, 255, 0.16);
+    }
+
+    .project-list li:last-child { border-bottom: none; }
+
+    .project-note {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .about details { width: 100%; }
+
+    .about summary {
       list-style: none;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      margin: -4px -4px 0;
-      padding: 6px 4px;
-      user-select: none;
-    }
-
-    .collapse-toggle::-webkit-details-marker {
-      display: none;
-    }
-
-    .collapse-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
       color: #d6d6d6;
-      font-size: 1.02rem;
+      font-size: 1.03rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       font-weight: 600;
     }
 
-    .icon-circle {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid var(--pill-border);
-      background: var(--pill-bg);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex: 0 0 auto;
-    }
+    .about summary::-webkit-details-marker { display: none; }
 
-    .chevron {
-      font-size: 1rem;
+    .about summary::after {
+      content: '⌄';
       color: var(--muted);
       transition: transform 0.25s ease;
     }
 
-    details[open] .chevron {
+    .about details[open] summary::after {
       transform: rotate(180deg);
     }
 
-    .collapse-content {
+    .about-content {
+      margin-top: 12px;
       padding-top: 10px;
       border-top: 1px solid var(--border);
-      margin-top: 10px;
     }
 
-
-    .sub-projects {
-      margin-top: 8px;
-      padding-left: 20px;
-    }
-
-    .sub-projects li {
-      margin-bottom: 6px;
+    .subsection-title {
+      margin: 14px 0 8px;
+      color: #bcdcff;
       font-size: 0.95rem;
-    }
-
-    .sub-projects .sub-projects {
-      margin-top: 6px;
-      padding-left: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
     }
 
     footer {
@@ -228,8 +200,8 @@
 <body>
   <main class="container" aria-label="Joshua Bucasan portfolio">
     <section class="card hero">
-      <h1>Joshua Bucasan</h1>
-      <p class="role">GIS and Forestry Professional</p>
+      <h1>JOSHUA BUCASAN</h1>
+      <p class="license">Registered Professional Forester (RPF) · October 2024</p>
       <div class="contact">
         <span>Baguio City, Philippines</span>
         <span>bucasanjoshua8@gmail.com</span>
@@ -237,131 +209,69 @@
       </div>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <h2>Education</h2>
-        <div class="entry">
-          <h3>Nueva Vizcaya State University</h3>
-          <p class="meta">Nueva Vizcaya, Philippines · Master of Science in Forestry · January 2026 – Present</p>
-          <p>Relevant Coursework: GIS Application in Natural Resource Management</p>
-        </div>
-        <div class="entry">
-          <h3>Benguet State University</h3>
-          <p class="meta">Benguet, Philippines · Bachelor of Science in Forestry · June 2019 – June 2024</p>
-          <p>Relevant Coursework: Geospatial Methods in Forestry</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>License</h2>
-        <div class="entry">
-          <h3>Registered Professional Forester</h3>
-          <p class="meta">October 2024</p>
-        </div>
-
-        <h2 class="section-spacer">Core Skills</h2>
-        <div class="pill-list">
-          <span class="pill">ArcGIS Desktop</span>
-          <span class="pill">ArcGIS Pro</span>
-          <span class="pill">QGIS</span>
-          <span class="pill">Remote Sensing</span>
-          <span class="pill">Cartography</span>
-          <span class="pill">Python Automation</span>
-          <span class="pill">PostgreSQL</span>
-          <span class="pill">PostGIS</span>
-        </div>
-      </article>
+    <section class="card">
+      <h2>Core Skills</h2>
+      <div class="skills-row" aria-label="Core skills with logos or representative graphics">
+        <span class="skill-badge">🧭 ArcGIS</span>
+        <span class="skill-badge">🗺️ QGIS</span>
+        <span class="skill-badge">🐍 Python</span>
+        <span class="skill-badge">🐘 PostgreSQL</span>
+        <span class="skill-badge">🌍 PostGIS</span>
+        <span class="skill-badge">📐 Cartography</span>
+        <span class="skill-badge">🛰️ Remote Sensing</span>
+        <span class="skill-badge">📊 Data Analysis</span>
+      </div>
     </section>
 
-    <section class="card collapsible">
-      <details>
-        <summary class="collapse-toggle">
-          <span class="collapse-label"><span class="icon-circle">💼</span>Experience</span>
-          <span class="chevron">⌄</span>
-        </summary>
-        <div class="collapse-content">
-          <div class="entry">
-            <h3>Quirino State University — GIS and Forestry Instructor (Contract of Service)</h3>
-            <p class="meta">Quirino, Philippines · January – December 2025</p>
-            <ul>
-              <li>Instructed 50+ undergraduate students per semester in GIS fundamentals, spatial analysis, and remote sensing through 2 hours of lecture and 3 hours of laboratory work weekly.</li>
-              <li>Curated and processed shapefiles and raster datasets from open-source repositories with Python scripting and AI support for hands-on learning in spatial analysis, digitizing, and map layout design.</li>
-              <li>Designed and implemented a comprehensive lab curriculum with 12 structured exercises, 12 instructional handouts, and 3 practical exams to ensure student competency.</li>
-              <li>Developed and maintained a centralized departmental GIS database, improving instructional data access and reducing student project preparation time.</li>
-            </ul>
-          </div>
+    <section class="card gis-projects">
+      <h2>GIS Projects</h2>
+      <ul class="project-list">
+        <li>
+          <a href="Landslide-Susceptibility-UMRBPL/README.md" target="_blank" rel="noopener noreferrer">Landslide Susceptibility Assessment — UMRBPL</a>
+          <span class="project-note">Includes overall susceptibility map, thematic maps, and factor-based susceptibility outputs.</span>
+        </li>
+        <li>
+          <a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis — Diffun, Quirino</a>
+        </li>
+        <li>
+          <a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis — Diffun, Quirino</a>
+        </li>
+        <li>
+          <a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices — Angadanan, Isabela</a>
+        </li>
+        <li>
+          <a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping — Tabuk, Kalinga</a>
+        </li>
+        <li>
+          <a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan — Benguet State University</a>
+        </li>
+      </ul>
+    </section>
 
-          <div class="entry">
-            <h3>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</h3>
-            <p class="meta">Baguio City, Philippines · October – December 2024</p>
-            <ul>
-              <li>Validated high-volume survey data daily against approved documents, including 30 Survey Plan Information (SPI) records, 200 lot parcels, and 300 scanned documents to maintain data accuracy.</li>
-              <li>Collaborated with geodetic engineers to identify spatial discrepancies (gaps, overlaps, projection errors) from data encoding and preserve official data integrity.</li>
-              <li>Documented and recommended corrective actions for inconsistencies, supporting quality improvement in geospatial databases.</li>
-              <li>Produced final map layouts for official reports and presentations, translating complex spatial data into clear visual outputs for stakeholders.</li>
-            </ul>
-          </div>
+    <section class="card about">
+      <details>
+        <summary>About Me</summary>
+        <div class="about-content">
+          <div class="subsection-title">Experience</div>
+          <ul>
+            <li><strong>Quirino State University — GIS and Forestry Instructor (Contract of Service)</strong><br>Quirino, Philippines · January – December 2025</li>
+            <li><strong>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</strong><br>Baguio City, Philippines · October – December 2024</li>
+          </ul>
+
+          <div class="subsection-title">Professional Training &amp; Development</div>
+          <ul>
+            <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
+            <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
+            <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
+          </ul>
+
+          <div class="subsection-title">Education</div>
+          <ul>
+            <li><strong>Nueva Vizcaya State University</strong> — Master of Science in Forestry (January 2026 – Present)</li>
+            <li><strong>Benguet State University</strong> — Bachelor of Science in Forestry (June 2019 – June 2024)</li>
+          </ul>
         </div>
       </details>
-    </section>
-
-    <section class="grid">
-      <article class="card collapsible">
-        <details>
-          <summary class="collapse-toggle">
-            <span class="collapse-label"><span class="icon-circle">🎓</span>Professional Training &amp; Development</span>
-            <span class="chevron">⌄</span>
-          </summary>
-          <div class="collapse-content">
-            <ul>
-              <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
-              <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
-              <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
-            </ul>
-          </div>
-        </details>
-      </article>
-
-      <article class="card">
-        <h2>Selected Portfolio Projects</h2>
-        <ul>
-          <li>
-            <a href="Landslide-Susceptibility-UMRBPL/README.md" target="_blank" rel="noopener noreferrer">Landslide Susceptibility Assessment — UMRBPL</a>
-            <ul class="sub-projects">
-              <li><a href="Landslide-Susceptibility-UMRBPL/Article%20Copy/Article_Landslide%20Susceptibilty%20Assessment.pdf" target="_blank" rel="noopener noreferrer">Article Copy (PDF)</a></li>
-              <li><a href="Landslide-Susceptibility-UMRBPL/Overall%20Susceptibility%20Map/Overall%20Susceptibility%20Map.png" target="_blank" rel="noopener noreferrer">Overall Susceptibility Map</a></li>
-              <li><a href="Landslide-Susceptibility-UMRBPL/Geotagged%20Landslides%20for%20Validation/Geotagged%20landslide.png" target="_blank" rel="noopener noreferrer">Geotagged Landslides for Validation</a></li>
-              <li>Thematic Maps
-                <ul class="sub-projects">
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Slope%20Map.png" target="_blank" rel="noopener noreferrer">Slope Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Morphology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Morphology Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Land%20use%20and%20land%20cover%20Map.png" target="_blank" rel="noopener noreferrer">Land Use and Land Cover Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Average%20annual%20rainfall%20Map.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Typhoon%20frequency%20Map.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Distance%20to%20lineament%20Map.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Map</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Geology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Geology Map</a></li>
-                </ul>
-              </li>
-              <li>Susceptibility Maps per Factor
-                <ul class="sub-projects">
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Slope%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Slope Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20morphology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Morphology Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20geology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Geology Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Land%20use%20and%20land%20coverSusceptibility.png" target="_blank" rel="noopener noreferrer">Land Use and Land Cover Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Average%20annual%20rainfall%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Typhoon%20frequency%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Susceptibility</a></li>
-                  <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Distance%20to%20lineament%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Susceptibility</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis — Diffun, Quirino (PDF)</a></li>
-          <li><a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis — Diffun, Quirino (PDF)</a></li>
-          <li><a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices — Angadanan, Isabela (PDF)</a></li>
-          <li><a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping — Tabuk, Kalinga (PNG)</a></li>
-          <li><a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan — Benguet State University (PNG)</a></li>
-        </ul>
-      </article>
     </section>
   </main>
 
