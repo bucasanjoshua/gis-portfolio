@@ -189,6 +189,96 @@
       font-weight: 600;
     }
 
+
+    .project-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      padding: 0;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .project-trigger:hover,
+    .project-trigger:focus-visible {
+      text-decoration: underline;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(760px, 95vw);
+      max-height: 85vh;
+      overflow: auto;
+      border: 1px solid #365575;
+      border-radius: 14px;
+      background: linear-gradient(170deg, #132438, #1a1a1a);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #b9dcff;
+    }
+
+    .modal-close {
+      border: 1px solid #3a4a5f;
+      border-radius: 8px;
+      background: #1b2835;
+      color: #d9e9ff;
+      padding: 5px 10px;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px 18px;
+    }
+
+    .modal-group h4 {
+      margin: 10px 0 6px;
+      color: #c7e4ff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .modal-group ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
     footer {
       text-align: center;
       color: var(--muted);
@@ -227,8 +317,8 @@
       <h2>GIS Projects</h2>
       <ul class="project-list">
         <li>
-          <a href="Landslide-Susceptibility-UMRBPL/README.md" target="_blank" rel="noopener noreferrer">Landslide Susceptibility Assessment — UMRBPL</a>
-          <span class="project-note">Includes overall susceptibility map, thematic maps, and factor-based susceptibility outputs.</span>
+          <button type="button" class="project-trigger" id="open-landslide-modal" aria-haspopup="dialog" aria-controls="landslide-modal" aria-expanded="false">Landslide Susceptibility Assessment — UMRBPL ↗</button>
+          <span class="project-note">Click to view all available subfolders and outputs in one panel.</span>
         </li>
         <li>
           <a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis — Diffun, Quirino</a>
@@ -274,6 +364,78 @@
       </details>
     </section>
   </main>
+
+
+  <div class="modal-backdrop" id="landslide-modal" role="dialog" aria-modal="true" aria-labelledby="landslide-modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h3 class="modal-title" id="landslide-modal-title">Landslide Susceptibility Assessment — UMRBPL</h3>
+        <button type="button" class="modal-close" id="close-landslide-modal">Close</button>
+      </div>
+      <div class="modal-grid">
+        <div class="modal-group">
+          <h4>Main Files</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Article%20Copy/Article_Landslide%20Susceptibilty%20Assessment.pdf" target="_blank" rel="noopener noreferrer">Article Copy (PDF)</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Overall%20Susceptibility%20Map/Overall%20Susceptibility%20Map.png" target="_blank" rel="noopener noreferrer">Overall Susceptibility Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Geotagged%20Landslides%20for%20Validation/Geotagged%20landslide.png" target="_blank" rel="noopener noreferrer">Geotagged Landslides for Validation</a></li>
+          </ul>
+        </div>
+        <div class="modal-group">
+          <h4>Thematic Maps</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Slope%20Map.png" target="_blank" rel="noopener noreferrer">Slope Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Morphology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Morphology Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Land%20use%20and%20land%20cover%20Map.png" target="_blank" rel="noopener noreferrer">Land Use & Land Cover Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Average%20annual%20rainfall%20Map.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Typhoon%20frequency%20Map.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Distance%20to%20lineament%20Map.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Geology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Geology Map</a></li>
+          </ul>
+        </div>
+        <div class="modal-group">
+          <h4>Susceptibility Maps per Factor</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Slope%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Slope Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20morphology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Morphology Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20geology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Geology Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Land%20use%20and%20land%20coverSusceptibility.png" target="_blank" rel="noopener noreferrer">Land Use & Land Cover Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Average%20annual%20rainfall%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Typhoon%20frequency%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Distance%20to%20lineament%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Susceptibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('landslide-modal');
+    const openBtn = document.getElementById('open-landslide-modal');
+    const closeBtn = document.getElementById('close-landslide-modal');
+
+    function openModal() {
+      modal.classList.add('open');
+      openBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      openBtn.setAttribute('aria-expanded', 'false');
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  </script>
 
   <footer>© 2026 Joshua Bucasan</footer>
 </body>
