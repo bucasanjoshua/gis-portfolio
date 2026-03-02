@@ -1,1 +1,1 @@
-## Generated Susceptibility Maps per Factors
+## Generated Susceptibility Maps per Factor
