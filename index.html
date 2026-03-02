@@ -2,120 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joshua Bucasan | GIS Consultant</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joshua Bucasan GIS and Forestry Portfolio">
+  <title>Joshua Bucasan | GIS Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #121212;
+      --panel: #1a1a1a;
+      --panel-alt: #202020;
+      --text: #f1f1f1;
+      --muted: #a9a9a9;
+      --border: #2c2c2c;
+      --accent: #9bc7ff;
+      --pill-bg: #1f2a38;
+      --pill-border: #2f425c;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #111;
       margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 0 20px;
+      width: min(1040px, 92vw);
+      margin: 42px auto;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero {
+      background: linear-gradient(150deg, var(--panel), var(--panel-alt));
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      font-weight: 600;
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.15;
     }
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 60px;
+    .role {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     h2 {
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: 600;
-      letter-spacing: 1px;
+      margin: 0 0 14px;
+      font-size: 1.02rem;
       text-transform: uppercase;
-      color: #444;
+      letter-spacing: 0.06em;
+      color: #d6d6d6;
     }
 
-    .project {
-      margin-bottom: 30px;
+    .section-spacer {
+      margin-top: 22px;
     }
 
-    .project a {
-      text-decoration: none;
-      color: #111;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .entry { margin-bottom: 18px; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry h3 {
+      margin: 0;
+      font-size: 1rem;
       font-weight: 600;
-      font-size: 18px;
     }
 
-    .project a:hover {
+    .meta {
+      margin: 4px 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #dfdfdf;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--pill-border);
+      background: var(--pill-bg);
+      color: #d2e5ff;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover,
+    a:focus-visible {
       text-decoration: underline;
     }
 
-    .project p {
-      margin: 5px 0 0 0;
-      color: #666;
-      font-size: 14px;
-    }
-
     footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #999;
+      text-align: center;
+      color: var(--muted);
+      margin: 16px 0 30px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
+  <main class="container">
+    <section class="card hero">
+      <h1>Joshua Bucasan</h1>
+      <p class="role">GIS and Forestry Professional</p>
+      <div class="contact">
+        <span>Baguio City, Philippines</span>
+        <span>bucasanjoshua8@gmail.com</span>
+        <span>+63 912 465 2738</span>
+      </div>
+    </section>
 
-<div class="container">
+    <section class="grid">
+      <article class="card">
+        <h2>Education</h2>
+        <div class="entry">
+          <h3>Nueva Vizcaya State University</h3>
+          <p class="meta">Nueva Vizcaya, Philippines · Master of Science in Forestry · January 2026 – Present</p>
+          <p>Relevant Coursework: GIS Application in Natural Resource Management</p>
+        </div>
+        <div class="entry">
+          <h3>Benguet State University</h3>
+          <p class="meta">Benguet, Philippines · Bachelor of Science in Forestry · June 2019 – June 2024</p>
+          <p>Relevant Coursework: Geospatial Methods in Forestry</p>
+        </div>
+      </article>
 
-  <h1>Joshua Bucasan, RPF</h1>
-  <div class="subtitle">
-    GIS Consultant — Hazard Modeling, Remote Sensing, Spatial Analysis
-  </div>
+      <article class="card">
+        <h2>License</h2>
+        <div class="entry">
+          <h3>Registered Professional Forester</h3>
+          <p class="meta">October 2024</p>
+        </div>
 
-  <h2>Selected Projects</h2>
+        <h2 class="section-spacer">Core Skills</h2>
+        <div class="pill-list">
+          <span class="pill">ArcGIS Desktop</span>
+          <span class="pill">ArcGIS Pro</span>
+          <span class="pill">QGIS</span>
+          <span class="pill">Remote Sensing</span>
+          <span class="pill">Cartography</span>
+          <span class="pill">Python Automation</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">PostGIS</span>
+        </div>
+      </article>
+    </section>
 
-  <div class="project">
-    <a href="Landslide-Susceptibility-UMRBPL/">Landslide Susceptibility Assessment — UMRBPL</a>
-    <p>Multi-criteria hazard modeling with validation using geotagged landslides.</p>
-  </div>
+    <section class="card">
+      <h2>Experience</h2>
+      <div class="entry">
+        <h3>Quirino State University — GIS and Forestry Instructor (Contract of Service)</h3>
+        <p class="meta">Quirino, Philippines · January – December 2025</p>
+        <ul>
+          <li>Instructed 50+ undergraduate students per semester in GIS fundamentals, spatial analysis, and remote sensing through 2 hours of lecture and 3 hours of laboratory work weekly.</li>
+          <li>Curated and processed shapefiles and raster datasets from open-source repositories with Python scripting and AI support for hands-on learning in spatial analysis, digitizing, and map layout design.</li>
+          <li>Designed and implemented a comprehensive lab curriculum with 12 structured exercises, 12 instructional handouts, and 3 practical exams to ensure student competency.</li>
+          <li>Developed and maintained a centralized departmental GIS database, improving instructional data access and reducing student project preparation time.</li>
+        </ul>
+      </div>
 
-  <div class="project">
-    <a href="Vegetation Analysis/NDVI_Diffun, Quirino, Philippines.pdf">NDVI Vegetation Analysis — Diffun, Quirino</a>
-    <p>Satellite-derived vegetation health analysis using spectral indices.</p>
-  </div>
+      <div class="entry">
+        <h3>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</h3>
+        <p class="meta">Baguio City, Philippines · October – December 2024</p>
+        <ul>
+          <li>Validated high-volume survey data daily against approved documents, including 30 Survey Plan Information (SPI) records, 200 lot parcels, and 300 scanned documents to maintain data accuracy.</li>
+          <li>Collaborated with geodetic engineers to identify spatial discrepancies (gaps, overlaps, projection errors) from data encoding and preserve official data integrity.</li>
+          <li>Documented and recommended corrective actions for inconsistencies, supporting quality improvement in geospatial databases.</li>
+          <li>Produced final map layouts for official reports and presentations, translating complex spatial data into clear visual outputs for stakeholders.</li>
+        </ul>
+      </div>
+    </section>
 
-  <div class="project">
-    <a href="Terrain Analysis/Terrain Analysis_Diffun, Quirino Philippines.pdf">Terrain Analysis — Diffun, Quirino</a>
-    <p>DEM-based slope, elevation, and terrain characterization.</p>
-  </div>
+    <section class="grid">
+      <article class="card">
+        <h2>Professional Training &amp; Development</h2>
+        <ul>
+          <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
+          <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
+          <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
+        </ul>
+      </article>
 
-  <div class="project">
-    <a href="Normalized Difference Indices/NDI_Angadanan, Isabela, Philippines.pdf">Normalized Difference Indices — Angadanan, Isabela</a>
-    <p>Water and vegetation index mapping using multispectral imagery.</p>
-  </div>
+      <article class="card">
+        <h2>Selected Portfolio Projects</h2>
+        <ul>
+          <li><a href="Landslide-Susceptibility-UMRBPL/Overall%20Susceptibility%20Map/Overall%20Susceptibility%20Map.png" target="_blank" rel="noopener noreferrer">Landslide Susceptibility Assessment — UMRBPL (Overall Map)</a></li>
+          <li><a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis — Diffun, Quirino (PDF)</a></li>
+          <li><a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis — Diffun, Quirino (PDF)</a></li>
+          <li><a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices — Angadanan, Isabela (PDF)</a></li>
+          <li><a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping — Tabuk, Kalinga (PNG)</a></li>
+          <li><a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan — Benguet State University (PNG)</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
 
-  <div class="project">
-    <a href="Land Use and Land Cover/LULC, Tabuk, Kalinga, Philippines.png">LULC Mapping — Tabuk, Kalinga</a>
-    <p>Land use classification and spatial distribution analysis.</p>
-  </div>
-
-  <div class="project">
-    <a href="Development Plan/Nursery Development Plan_Benguet State University, Philippines.png">Nursery Development Plan — Benguet State University</a>
-    <p>Spatial site planning and development suitability assessment.</p>
-  </div>
-
-  <footer>
-    © 2026 Joshua Bucasan
-  </footer>
-
-</div>
-
+  <footer>© 2026 Joshua Bucasan</footer>
 </body>
 </html>
