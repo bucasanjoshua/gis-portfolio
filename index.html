@@ -2,120 +2,450 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joshua Bucasan | GIS Consultant</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joshua Bucasan GIS and Forestry Portfolio">
+  <meta name="theme-color" content="#121212">
+  <title>Joshua Bucasan | GIS Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #090c10;
+      --panel: rgba(18, 24, 32, 0.66);
+      --panel-alt: rgba(23, 30, 39, 0.6);
+      --text: #f1f1f1;
+      --muted: #a9a9a9;
+      --border: #2c2c2c;
+      --accent: #9bc7ff;
+      --highlight: #132538;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #111;
       margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(4, 8, 12, 0.76), rgba(4, 8, 12, 0.82)),
+        url('https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 0 20px;
+      width: min(900px, 92vw);
+      margin: 42px auto;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(132, 157, 185, 0.24);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .hero {
+      background: linear-gradient(150deg, rgba(20, 29, 40, 0.76), rgba(20, 30, 42, 0.58));
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .license {
+      margin: 10px 0 12px;
+      color: var(--accent);
       font-weight: 600;
     }
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 60px;
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     h2 {
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: 600;
-      letter-spacing: 1px;
+      margin: 0 0 14px;
+      font-size: 1.03rem;
       text-transform: uppercase;
-      color: #444;
+      letter-spacing: 0.06em;
+      color: #d6d6d6;
     }
 
-    .project {
-      margin-bottom: 30px;
+    p, li { color: #dfdfdf; }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
     }
 
-    .project a {
+    li { margin-bottom: 8px; }
+
+    a {
+      color: var(--accent);
       text-decoration: none;
-      color: #111;
       font-weight: 600;
-      font-size: 18px;
     }
 
-    .project a:hover {
+    a:hover,
+    a:focus-visible { text-decoration: underline; }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid #3a4a5f;
+      background: #1b2835;
+      color: #d9e9ff;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+
+    .gis-projects {
+      border: 1px solid rgba(125, 170, 215, 0.45);
+      background: linear-gradient(170deg, rgba(15, 44, 70, 0.7), rgba(12, 21, 32, 0.62));
+    }
+
+    .gis-projects h2 {
+      color: #b9dcff;
+      font-size: 1.15rem;
+    }
+
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .project-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(185, 220, 255, 0.16);
+    }
+
+    .project-list li:last-child { border-bottom: none; }
+
+    .project-note {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .about details { width: 100%; }
+
+    .about summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #d6d6d6;
+      font-size: 1.03rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .about summary::-webkit-details-marker { display: none; }
+
+    .about summary::after {
+      content: '⌄';
+      color: var(--muted);
+      transition: transform 0.25s ease;
+    }
+
+    .about details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .about-content {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .subsection-title {
+      margin: 14px 0 8px;
+      color: #bcdcff;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+
+    .project-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      padding: 0;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .project-trigger:hover,
+    .project-trigger:focus-visible {
       text-decoration: underline;
     }
 
-    .project p {
-      margin: 5px 0 0 0;
-      color: #666;
-      font-size: 14px;
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(760px, 95vw);
+      max-height: 85vh;
+      overflow: auto;
+      border: 1px solid #365575;
+      border-radius: 14px;
+      background: linear-gradient(170deg, rgba(11, 36, 58, 0.88), rgba(12, 19, 28, 0.9));
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #b9dcff;
+    }
+
+    .modal-close {
+      border: 1px solid #3a4a5f;
+      border-radius: 8px;
+      background: #1b2835;
+      color: #d9e9ff;
+      padding: 5px 10px;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px 18px;
+    }
+
+    .modal-group h4 {
+      margin: 10px 0 6px;
+      color: #c7e4ff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .modal-group ul {
+      margin: 0;
+      padding-left: 18px;
     }
 
     footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #999;
+      text-align: center;
+      color: var(--muted);
+      margin: 16px 0 30px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-
 <body>
+  <main class="container" aria-label="Joshua Bucasan portfolio">
+    <section class="card hero">
+      <h1>JOSHUA BUCASAN</h1>
+      <p class="license">Registered Professional Forester (RPF) · GIS Specialist</p>
+      <div class="contact">
+        <span>Baguio City, Philippines</span>
+        <span>bucasanjoshua8@gmail.com</span>
+        <span>+63 912 465 2738</span>
+      </div>
+    </section>
 
-<div class="container">
+    <section class="card">
+      <h2>Core Skills</h2>
+      <div class="skills-row" aria-label="Core skills with logos or representative graphics">
+        <span class="skill-badge">🗺️ QGIS</span>
+        <span class="skill-badge">🧭 ArcGIS</span>
+        <span class="skill-badge">🐍 Python</span>
+        <span class="skill-badge">🐘 PostgreSQL</span>
+        <span class="skill-badge">🌍 PostGIS</span>
+        <span class="skill-badge">📐 Cartography</span>
+        <span class="skill-badge">🛰️ Remote Sensing</span>
+        <span class="skill-badge">📊 Data Analysis</span>
+      </div>
+    </section>
 
-  <h1>Joshua Bucasan, RPF</h1>
-  <div class="subtitle">
-    GIS Consultant — Hazard Modeling, Remote Sensing, Spatial Analysis
+    <section class="card gis-projects">
+      <h2>GIS Projects</h2>
+      <ul class="project-list">
+        <li>
+          <button type="button" class="project-trigger" id="open-landslide-modal" aria-haspopup="dialog" aria-controls="landslide-modal" aria-expanded="false">Landslide Susceptibility Assessment ↗</button>
+        </li>
+        <li>
+          <a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis</a>
+        </li>
+        <li>
+          <a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis</a>
+        </li>
+        <li>
+          <a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices</a>
+        </li>
+        <li>
+          <a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping</a>
+        </li>
+        <li>
+          <a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card about">
+      <details>
+        <summary>About Me</summary>
+        <div class="about-content">
+          <div class="subsection-title">Experience</div>
+          <ul>
+            <li><strong>Quirino State University — GIS and Forestry Instructor (Contract of Service)</strong><br>Quirino, Philippines · January – December 2025</li>
+            <li><strong>Department of Environment and Natural Resources – CAR, Surveys and Mapping Division — GIS Specialist (Contract of Service)</strong><br>Baguio City, Philippines · October – December 2024</li>
+          </ul>
+
+          <div class="subsection-title">Professional Training &amp; Development</div>
+          <ul>
+            <li>Facilitator: QGIS Applications in Agriculture (Phase I) — Agricultural Training Institute - Cordillera Administrative Region (40 hours)</li>
+            <li>Facilitator: Introductory Training on Geographic Information System and Unmanned Aerial Vehicle Application in Mapping — Benguet State University Center for Geoinformatics (36 hours)</li>
+            <li>Training on Remote Sensing 101: Applications in Agriculture, Forestry, and Natural Resource Management — Benguet State University (24 hours)</li>
+          </ul>
+
+          <div class="subsection-title">Education</div>
+          <ul>
+            <li><strong>Nueva Vizcaya State University</strong> — Master of Science in Forestry (January 2026 – Present)</li>
+            <li><strong>Benguet State University</strong> — Bachelor of Science in Forestry (June 2019 – June 2024)</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+  </main>
+
+
+  <div class="modal-backdrop" id="landslide-modal" role="dialog" aria-modal="true" aria-labelledby="landslide-modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h3 class="modal-title" id="landslide-modal-title">Landslide Susceptibility Assessment</h3>
+        <button type="button" class="modal-close" id="close-landslide-modal">Close</button>
+      </div>
+      <div class="modal-grid">
+        <div class="modal-group">
+          <h4>Main Files</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Article%20Copy/Article_Landslide%20Susceptibilty%20Assessment.pdf" target="_blank" rel="noopener noreferrer">Article Copy (PDF)</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Overall%20Susceptibility%20Map/Overall%20Susceptibility%20Map.png" target="_blank" rel="noopener noreferrer">Overall Susceptibility Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Geotagged%20Landslides%20for%20Validation/Geotagged%20landslide.png" target="_blank" rel="noopener noreferrer">Geotagged Landslides for Validation</a></li>
+          </ul>
+        </div>
+        <div class="modal-group">
+          <h4>Thematic Maps</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Slope%20Map.png" target="_blank" rel="noopener noreferrer">Slope Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Morphology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Morphology Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Land%20use%20and%20land%20cover%20Map.png" target="_blank" rel="noopener noreferrer">Land Use & Land Cover Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Average%20annual%20rainfall%20Map.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Typhoon%20frequency%20Map.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Distance%20to%20lineament%20Map.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Map</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Thematic%20Maps/Soil%20Geology%20Map.png" target="_blank" rel="noopener noreferrer">Soil Geology Map</a></li>
+          </ul>
+        </div>
+        <div class="modal-group">
+          <h4>Susceptibility Maps per Factor</h4>
+          <ul>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Slope%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Slope Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20morphology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Morphology Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Soil%20geology%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Soil Geology Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Land%20use%20and%20land%20coverSusceptibility.png" target="_blank" rel="noopener noreferrer">Land Use & Land Cover Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Average%20annual%20rainfall%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Average Annual Rainfall Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Typhoon%20frequency%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Typhoon Frequency Susceptibility</a></li>
+            <li><a href="Landslide-Susceptibility-UMRBPL/Susceptibility%20Maps%20per%20Factor/Distance%20to%20lineament%20Susceptibility.png" target="_blank" rel="noopener noreferrer">Distance to Lineament Susceptibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h2>Selected Projects</h2>
+  <script>
+    const modal = document.getElementById('landslide-modal');
+    const openBtn = document.getElementById('open-landslide-modal');
+    const closeBtn = document.getElementById('close-landslide-modal');
 
-  <div class="project">
-    <a href="Landslide-Susceptibility-UMRBPL/">Landslide Susceptibility Assessment — UMRBPL</a>
-    <p>Multi-criteria hazard modeling with validation using geotagged landslides.</p>
-  </div>
+    function openModal() {
+      modal.classList.add('open');
+      openBtn.setAttribute('aria-expanded', 'true');
+    }
 
-  <div class="project">
-    <a href="Vegetation Analysis/NDVI_Diffun, Quirino, Philippines.pdf">NDVI Vegetation Analysis — Diffun, Quirino</a>
-    <p>Satellite-derived vegetation health analysis using spectral indices.</p>
-  </div>
+    function closeModal() {
+      modal.classList.remove('open');
+      openBtn.setAttribute('aria-expanded', 'false');
+      openBtn.focus();
+    }
 
-  <div class="project">
-    <a href="Terrain Analysis/Terrain Analysis_Diffun, Quirino Philippines.pdf">Terrain Analysis — Diffun, Quirino</a>
-    <p>DEM-based slope, elevation, and terrain characterization.</p>
-  </div>
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
 
-  <div class="project">
-    <a href="Normalized Difference Indices/NDI_Angadanan, Isabela, Philippines.pdf">Normalized Difference Indices — Angadanan, Isabela</a>
-    <p>Water and vegetation index mapping using multispectral imagery.</p>
-  </div>
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
 
-  <div class="project">
-    <a href="Land Use and Land Cover/LULC, Tabuk, Kalinga, Philippines.png">LULC Mapping — Tabuk, Kalinga</a>
-    <p>Land use classification and spatial distribution analysis.</p>
-  </div>
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  </script>
 
-  <div class="project">
-    <a href="Development Plan/Nursery Development Plan_Benguet State University, Philippines.png">Nursery Development Plan — Benguet State University</a>
-    <p>Spatial site planning and development suitability assessment.</p>
-  </div>
-
-  <footer>
-    © 2026 Joshua Bucasan
-  </footer>
-
-</div>
-
+  <footer>© 2026 Joshua Bucasan · Background photo from Pexels (free use).</footer>
 </body>
 </html>
