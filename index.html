@@ -136,25 +136,35 @@
       font-size: 1.15rem;
     }
 
-    .project-list {
-      list-style: none;
-      padding-left: 0;
+    .projects-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-card {
+      border: 1px solid rgba(149, 195, 242, 0.3);
+      border-radius: 12px;
+      background: rgba(11, 24, 37, 0.6);
+      padding: 14px 16px;
+    }
+
+    .project-title {
       margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
-    .project-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(185, 220, 255, 0.16);
+    .project-desc {
+      margin: 8px 0 8px;
+      color: #dce5ef;
+      font-size: 0.94rem;
     }
 
-    .project-list li:last-child { border-bottom: none; }
-
-    .project-note {
-      display: block;
-      color: var(--muted);
+    .project-software {
+      margin: 0;
+      color: #b9dcff;
       font-size: 0.9rem;
-      margin-top: 3px;
-      font-weight: 400;
+      font-weight: 600;
     }
 
     .about details { width: 100%; }
@@ -209,8 +219,10 @@
       color: var(--accent);
       padding: 0;
       font: inherit;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
+      line-height: 1.3;
     }
 
     .project-trigger:hover,
@@ -339,26 +351,43 @@
 
     <section class="card gis-projects">
       <h2>GIS Projects</h2>
-      <ul class="project-list">
-        <li>
-          <button type="button" class="project-trigger" id="open-landslide-modal" aria-haspopup="dialog" aria-controls="landslide-modal" aria-expanded="false">Landslide Susceptibility Assessment ↗</button>
-        </li>
-        <li>
-          <a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis</a>
-        </li>
-        <li>
-          <a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis</a>
-        </li>
-        <li>
-          <a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices</a>
-        </li>
-        <li>
-          <a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping</a>
-        </li>
-        <li>
-          <a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan</a>
-        </li>
-      </ul>
+      <div class="projects-stack">
+        <article class="project-card">
+          <h3 class="project-title"><button type="button" class="project-trigger" id="open-landslide-modal" aria-haspopup="dialog" aria-controls="landslide-modal" aria-expanded="false">Landslide Susceptibility Assessment ↗</button></h3>
+          <p class="project-desc">GIS-based landslide susceptibility modeling using weighted multi-criteria evaluation to identify high-risk zones and support hazard planning.</p>
+          <p class="project-software">Software used: QGIS, MCDA (Weighted Overlay)</p>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title"><a href="Vegetation%20Analysis/NDVI_Diffun,%20Quirino,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">NDVI Vegetation Analysis ↗</a></h3>
+          <p class="project-desc">Vegetation health assessment using NDVI from satellite imagery, including raster generation, reclassification, and map layout production.</p>
+          <p class="project-software">Software used: QGIS, ArcGIS, Remote Sensing Techniques</p>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title"><a href="Terrain%20Analysis/Terrain%20Analysis_Diffun,%20Quirino%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Terrain Analysis ↗</a></h3>
+          <p class="project-desc">Terrain characterization from DEM data to analyze elevation, slope, aspect, contours, and hillshade for environmental assessment.</p>
+          <p class="project-software">Software used: QGIS, ArcGIS (Spatial Analyst), Raster Processing</p>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title"><a href="Normalized%20Difference%20Indices/NDI_Angadanan,%20Isabela,%20Philippines.pdf" target="_blank" rel="noopener noreferrer">Normalized Difference Indices ↗</a></h3>
+          <p class="project-desc">Spectral index mapping for environmental condition assessment using normalized difference calculations across built-up, moisture, and vegetation indices.</p>
+          <p class="project-software">Software used: QGIS, ArcGIS</p>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title"><a href="Land%20Use%20and%20Land%20Cover/LULC,%20Tabuk,%20Kalinga,%20Philippines.png" target="_blank" rel="noopener noreferrer">LULC Mapping ↗</a></h3>
+          <p class="project-desc">Land use and land cover classification workflow with satellite image interpretation, supervised classification, and accuracy assessment outputs.</p>
+          <p class="project-software">Software used: QGIS, ENVI, Remote Sensing Data</p>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title"><a href="Development%20Plan/Nursery%20Development%20Plan_Benguet%20State%20University,%20Philippines.png" target="_blank" rel="noopener noreferrer">Nursery Development Plan ↗</a></h3>
+          <p class="project-desc">Proposed nursery development layout map prepared to support planning and site organization.</p>
+          <p class="project-software">Software used: QGIS</p>
+        </article>
+      </div>
     </section>
 
     <section class="card about">
