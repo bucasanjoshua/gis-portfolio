@@ -61,10 +61,3 @@ Benguet State University | 2019 – 2024
 
 Registered Professional Forester – October 2024
 
----
-
-### 6. Nursery Development Plan – Benguet State University, Philippines
-
-Developed map for proposed nursery developments
-
-**Tools Used:** QGIS
